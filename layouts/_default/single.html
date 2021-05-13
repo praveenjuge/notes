@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="prose prose-green mx-auto">
+  <h1>{{ .Title }}</h1>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}" class="mr-1 text-xs uppercase">{{ .LinkTitle }}</a>
+  {{ end }} {{ with .Description }}
+  <p>{{ . }}</p>
+  {{ end }} {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    {{ $styles := resources.Get "main.css" }} {{ $styles = $styles |
+    resources.PostCSS (dict "inlineImports" true) }} {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify }} {{ end }}
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link href="{{ $styles.Permalink }}" rel="stylesheet" />
+  </head>
+  <body class="antialiased font-sans type-alt bg-white text-gray-800 px-4">
+    <aside
+      class="
+        p-5
+        flex flex-col
+        left-0
+        text-sm
+        md:w-64
+        md:fixed
+        inset-y-0
+        space-y-2
+        font-semibold
+        bg-gray-900
+        text-gray-300
+      "
+    >
+      <a href="/">{{ .Site.Title }}</a>
+      {{ range .Site.RegularPages }}
+      <a
+        href="{{ .RelPermalink }}"
+        class="truncate {{ if eq $.Page.RelPermalink .RelPermalink }}text-green-500{{ end }}"
+        >{{ .Title }}</a
+      >
+      {{ end }}
+    </aside>
+    <main class="py-12 md:ml-64">{{ block "main" . }}{{ end }}</main>
+  </body>
+</html>

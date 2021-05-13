@@ -1,0 +1,8 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Praveen Juge's Notes"
+disableHugoGeneratorInject = true
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
