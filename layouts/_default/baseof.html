@@ -5,47 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
     {{ $styles := resources.Get "main.css" }} {{ $styles = $styles |
-    resources.PostCSS (dict "inlineImports" true "use" "tailwindcss") }} {{ if
-    hugo.IsProduction }} {{ $styles = $styles | minify }} {{ end }}
-    <link rel="preload" href="{{ $styles.Permalink }}" as="style" />
+    resources.PostCSS (dict "use" "tailwindcss" ) }} {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify }} {{ end }}
     <link href="{{ $styles.Permalink }}" rel="stylesheet" />
   </head>
-  <body class="antialiased p-10 md:ml-64">
+  <body class="antialiased md:ml-64">
     <aside
       class="
-        px-4
+        p-4
         text-sm
         md:w-64
         md:fixed
+        space-y-2
         md:inset-0
         font-medium
         bg-gray-900
+        text-gray-100
         overflow-y-auto
       "
     >
-      {{ range .Site.RegularPages.GroupBy "Section" }} {{ with $.Site.GetPage
-      "section" .Key }}
-      <a href="{{ .Permalink }}" class="block mt-5 text-gray-400">
-        {{ .Title }}
-      </a>
-      {{ else }}
-      <a href="{{ .Permalink }}" class="block mt-5 text-gray-400">
-        {{ .Key | title }}
-      </a>
-      {{ end }} {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="block mt-2.5 text-gray-100">
-        {{ .Title }}
-      </a>
+      {{ range .Site.RegularPages.GroupBy "Section" }}
+      <p class="pt-2 text-gray-400">
+        {{ with $.Site.GetPage "section" .Key }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ else }}
+        <a href="{{ .Permalink }}">{{ .Key | title }}</a>
+        {{ end }}
+      </p>
+      {{ range .Pages }}
+      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
       {{ end }} {{ end }}
     </aside>
-    <article class="prose mx-auto">
+    <article class="prose p-8 mx-auto">
       <h1>{{ .Title }}</h1>
       {{ with .Description }}
       <p>{{ . }}</p>
       {{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
       <hr />
       {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="block">{{ .Title }}</a>
+      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
       {{ end }} {{ end }}
     </article>
   </body>

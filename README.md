@@ -1,3 +1,3 @@
 # Notes
 
-Some notes for future reference.
+A site to store my notes :)

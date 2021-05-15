@@ -1,4 +1,2 @@
-[markup]
-  [markup.highlight]
-    style = "dracula"
-    noClasses = false
+[markup.highlight]
+  noClasses = false
