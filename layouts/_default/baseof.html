@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,13 +8,13 @@
     {{ $styles := resources.Get "main.css" }} {{ $styles = $styles |
     resources.PostCSS (dict "inlineImports" true) }} {{ if hugo.IsProduction }}
     {{ $styles = $styles | minify }} {{ end }}
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link href="{{ $styles.Permalink }}" rel="stylesheet" />
   </head>
-  <body class="antialiased font-sans type-alt bg-white text-gray-800 px-4">
+  <body class="antialiased font-sans bg-gray-50 text-gray-800 px-4">
     <aside
       class="
-        p-5
+        px-4
+        py-3
         flex flex-col
         left-0
         text-sm
@@ -27,14 +27,38 @@
         text-gray-300
       "
     >
-      <a href="/">{{ .Site.Title }}</a>
-      {{ range .Site.RegularPages }}
+      {{ range .Site.RegularPages.GroupBy "Section" }} {{ with $.Site.GetPage
+      "section" .Key }}
       <a
-        href="{{ .RelPermalink }}"
-        class="truncate {{ if eq $.Page.RelPermalink .RelPermalink }}text-green-500{{ end }}"
-        >{{ .Title }}</a
+        href="{{ .Permalink }}"
+        class="
+          truncate
+          text-xs text-gray-500
+          uppercase
+          tracking-wide
+          font-bold
+          pt-2
+        "
       >
-      {{ end }}
+        {{.Title}}
+      </a>
+      {{ else }}
+      <a
+        href="{{ .Permalink }}"
+        class="
+          truncate
+          text-xs text-gray-500
+          uppercase
+          tracking-wide
+          font-bold
+          pt-2
+        "
+      >
+        {{ .Key | title }}
+      </a>
+      {{ end }} {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="truncate">{{ .Title }}</a>
+      {{ end }} {{ end }}
     </aside>
     <main class="py-12 md:ml-64">{{ block "main" . }}{{ end }}</main>
   </body>

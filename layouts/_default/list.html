@@ -1,6 +1,14 @@
 {{ define "main" }}
 <article class="prose prose-green mx-auto">
   <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  {{ with .Description }}
+  <p>{{ . }}</p>
+  {{ end }} {{ .Content }}
+
+  <hr />
+
+  {{ range .RegularPages.GroupBy "Section" }} {{ range .Pages }}
+  <a href="{{ .Permalink }}" class="block">{{ .Title }}</a>
+  {{ end }} {{ end }}
 </article>
 {{ end }}
