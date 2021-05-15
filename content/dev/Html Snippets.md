@@ -60,12 +60,8 @@ Google Fonts:
 />
 ```
 
-Regex for Hardcoded strings:
+Regex for Hardcoded Strings:
 
 ```shell
-title="[A-Za-z0-9]{1,}
-message="[A-Za-z0-9]{1,}
-placeholder="[A-Za-z0-9]{1,}
-label="[A-Za-z0-9]{1,}
->[A-Za-z0-9]{1,}
+(>|title="|message="|placeholder="|value="|alt="|label=")[A-Za-z0-9]{1,}
 ```
