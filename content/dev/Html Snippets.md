@@ -2,7 +2,7 @@
 title: "HTML Snippets"
 ---
 
-Lorem Ipsum:
+## Lorem Ipsum
 
 ```html
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -13,13 +13,13 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 ```
 
-Unicode:
+## Unicode
 
 ```html
 • ·
 ```
 
-SVG Favicon:
+## SVG Favicon
 
 ```html
 <svg xmlns="http://w3.org/2000/svg" viewBox="0 0 100 100">
@@ -27,7 +27,7 @@ SVG Favicon:
 </svg>
 ```
 
-Input Modes:
+## Input Modes
 
 ```html
 <input type="text" inputmode="decimal" />
@@ -45,7 +45,7 @@ For Search:
 <input type="text" inputmode="search" />
 ```
 
-Google Fonts:
+## Google Fonts
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,7 +60,7 @@ Google Fonts:
 />
 ```
 
-Regex for Hardcoded Strings:
+## Regex for Hardcoded Strings
 
 ```shell
 (>|title="|message="|placeholder="|value="|alt="|label=")[A-Za-z0-9]{1,}
