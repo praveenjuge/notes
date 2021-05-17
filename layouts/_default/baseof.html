@@ -3,6 +3,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        tab-size: 4;
+        -moz-tab-size: 4;
+        line-height: 1.5;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif,
+          apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
+      }
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+      }
+      blockquote,
+      dd,
+      dl,
+      figure,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      p,
+      pre,
+      ol,
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          liberation mono, courier new, monospace;
+      }
+      audio,
+      canvas,
+      embed,
+      iframe,
+      img,
+      object,
+      svg,
+      video {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      aside {
+        background-color: #000000;
+        padding: 1rem;
+      }
+      aside a {
+        display: block;
+        color: #f3f4f6;
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        margin-bottom: 0.6rem;
+        text-decoration: none;
+      }
+      @media (min-width: 768px) {
+        body {
+          margin-left: 16rem;
+        }
+        aside {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 16rem;
+          position: fixed;
+          overflow-y: auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <aside>
@@ -26,91 +113,6 @@
       {{ end }} {{ end }}
     </article>
     <style>
-      html,
-      body {
-        margin: 0;
-        tab-size: 4;
-        -moz-tab-size: 4;
-        line-height: 1.5;
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif,
-          apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
-      }
-      *,
-      ::after,
-      ::before {
-        box-sizing: border-box;
-        border: 0;
-        border-style: solid;
-      }
-      b,
-      strong {
-        font-weight: bolder;
-      }
-      small {
-        font-size: 80%;
-      }
-      sub,
-      sup {
-        font-size: 75%;
-        line-height: 0;
-        position: relative;
-        vertical-align: baseline;
-      }
-      sub {
-        bottom: -0.25em;
-      }
-      sup {
-        top: -0.5em;
-      }
-      blockquote,
-      dd,
-      dl,
-      figure,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      hr,
-      p,
-      pre,
-      ol,
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        font-size: inherit;
-        font-weight: inherit;
-      }
-      a {
-        color: inherit;
-        text-decoration: inherit;
-      }
-      code,
-      kbd,
-      pre,
-      samp {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          liberation mono, courier new, monospace;
-      }
-      audio,
-      canvas,
-      embed,
-      iframe,
-      img,
-      object,
-      svg,
-      video {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
       article {
         padding: 2rem;
         color: #374151;
@@ -125,7 +127,8 @@
         text-decoration: underline;
         font-weight: 500;
       }
-      article strong {
+      article strong,
+      article b {
         color: #111827;
         font-weight: 600;
       }
@@ -218,7 +221,8 @@
         line-height: 1.4285714;
         margin-top: 0.8571429em;
       }
-      article code {
+      article code,
+      article kbd {
         color: #111827;
         font-weight: 600;
         font-size: 0.875em;
@@ -454,31 +458,6 @@
       .gi,
       .gu {
         font-weight: 700;
-      }
-      aside {
-        color: #f3f4f6;
-        background-color: #000000;
-        font-weight: 500;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        overflow-y: auto;
-        padding: 1rem;
-      }
-      aside a {
-        display: block;
-        margin-bottom: 0.6rem;
-      }
-      @media (min-width: 768px) {
-        body {
-          margin-left: 16rem;
-        }
-        aside {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          width: 16rem;
-        }
       }
     </style>
   </body>
