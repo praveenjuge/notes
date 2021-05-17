@@ -5,375 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
     <style>
-      html,
-      body {
-        margin: 0;
-        tab-size: 4;
-        -moz-tab-size: 4;
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif,
-          apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
-      }
-      *,
-      ::after,
-      ::before {
-        box-sizing: border-box;
-        border-width: 0;
-        border-style: solid;
-      }
-      blockquote,
-      dd,
-      dl,
-      figure,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      hr,
-      p,
-      pre,
-      ol,
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      code,
-      kbd,
-      pre,
-      samp {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          liberation mono, courier new, monospace;
-      }
-      aside {
-        background-color: #000000;
-        padding: 1rem;
-      }
-      aside a {
-        display: block;
-        color: #f3f4f6;
-        font-weight: 500;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        margin-bottom: 0.6rem;
-        text-decoration: none;
+      body,
+      a {
+        line-height: 1.7;
+        color: rgb(221, 221, 221);
+        background-color: #040811;
+        font-family: ui-sans-serif, system-ui, sans-serif;
       }
       article {
-        padding: 2rem;
-        color: #374151;
         max-width: 65ch;
         margin-left: auto;
         margin-right: auto;
-        font-size: 1rem;
-        line-height: 1.75;
       }
       @media (min-width: 768px) {
         body {
-          margin-left: 16rem;
+          margin-left: 15rem;
         }
         aside {
-          top: 0;
-          left: 0;
-          bottom: 0;
-          width: 16rem;
+          top: 10px;
+          left: 10px;
+          bottom: 10px;
+          width: 15rem;
           position: fixed;
           overflow-y: auto;
         }
       }
-    </style>
-  </head>
-  <body>
-    <aside>
-      {{ range .Site.RegularPages.GroupBy "Section" }} {{ with $.Site.GetPage
-      "section" .Key }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ else }}
-      <a href="{{ .Permalink }}">{{ .Key | title }}</a>
-      {{ end }} {{ range .Pages }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ end }} {{ end }}
-    </aside>
-    <article>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}
-      <p>{{ . }}</p>
-      {{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
-      <hr />
-      {{ range .Pages }}
-      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-      {{ end }} {{ end }}
-    </article>
-    <style>
-      article a {
-        color: #111827;
-        text-decoration: underline;
-        font-weight: 500;
+      .c,
+      .c1,
+      .ch,
+      .cm,
+      .cs,
+      p,
+      li,
+      td {
+        color: #8899cc;
       }
-      article strong,
-      article b {
-        color: #111827;
+      .gh,
+      .gi,
+      .gu {
         font-weight: 600;
       }
-      article ol > li {
-        position: relative;
-        padding-left: 1.75em;
-      }
-      article ol > li::before {
-        content: counter(list-item, decimal) ".";
-        position: absolute;
-        font-weight: 400;
-        color: #6b7280;
-        left: 0;
-      }
-      article ul > li {
-        position: relative;
-        padding-left: 1.75em;
-      }
-      article ul > li::before {
-        content: "";
-        position: absolute;
-        background-color: #d1d5db;
-        border-radius: 50%;
-        width: 0.375em;
-        height: 0.375em;
-        top: calc(0.875em - 0.1875em);
-        left: 0.25em;
-      }
-      article hr {
-        border-style: solid;
-        border-color: #e5e7eb;
-        margin-top: 3em;
-        margin-bottom: 3em;
-        height: 0;
-        color: inherit;
-        border-top-width: 1px;
-      }
-      article blockquote {
-        font-weight: 500;
-        font-style: italic;
-        color: #111827;
-        border-left-width: 0.25rem;
-        border-left-color: #e5e7eb;
-        quotes: "\201C""\201D""\2018""\2019";
-        margin-top: 1.6em;
-        margin-bottom: 1.6em;
-        padding-left: 1em;
-      }
-      article blockquote p:first-of-type::before {
-        content: open-quote;
-      }
-      article blockquote p:last-of-type::after {
-        content: close-quote;
-      }
-      article h1 {
-        color: #111827;
-        font-weight: 800;
-        font-size: 2.25em;
-        margin-top: 0;
-        margin-bottom: 0.8888889em;
-        line-height: 1.1111111;
-        letter-spacing: -0.8px;
-      }
-      article h2 {
-        color: #111827;
-        font-weight: 700;
-        font-size: 1.5em;
-        margin-top: 2em;
-        margin-bottom: 1em;
-        line-height: 1.3333333;
-      }
-      article h3 {
-        color: #111827;
-        font-weight: 600;
-        font-size: 1.25em;
-        margin-top: 1.6em;
-        margin-bottom: 0.6em;
-        line-height: 1.6;
-      }
-      article h4 {
-        color: #111827;
-        font-weight: 600;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
-        line-height: 1.5;
-      }
-      article figure figcaption {
-        color: #6b7280;
-        font-size: 0.875em;
-        line-height: 1.4285714;
-        margin-top: 0.8571429em;
-      }
-      article code,
-      article kbd {
-        color: #111827;
-        font-weight: 600;
-        font-size: 0.875em;
-      }
-      article code::before {
-        content: "`";
-      }
-      article code::after {
-        content: "`";
-      }
-      article a code {
-        color: #111827;
-      }
-      article pre {
-        color: #e5e7eb;
-        background-color: #000000;
-        overflow-x: auto;
-        font-size: 0.875em;
-        line-height: 1.7142857;
-        margin-top: 1.7142857em;
-        margin-bottom: 1.7142857em;
-        border-radius: 0.375rem;
-        padding-top: 0.8571429em;
-        padding-right: 1.1428571em;
-        padding-bottom: 0.8571429em;
-        padding-left: 1.1428571em;
-      }
-      article pre code {
-        background-color: transparent;
-        border-width: 0;
-        border-radius: 0;
-        padding: 0;
-        font-weight: 400;
-        color: inherit;
-        font-size: inherit;
-        font-family: inherit;
-        line-height: inherit;
-      }
-      article pre code::before {
-        content: none;
-      }
-      article pre code::after {
-        content: none;
-      }
-      article table {
-        text-indent: 0;
-        border-color: inherit;
-        border-collapse: collapse;
-        width: 100%;
-        table-layout: auto;
-        text-align: left;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        font-size: 0.875em;
-        line-height: 1.7142857;
-      }
-      article thead {
-        color: #111827;
-        font-weight: 600;
-        border-bottom-width: 1px;
-        border-bottom-color: #d1d5db;
-      }
-      article thead th {
-        vertical-align: bottom;
-        padding-right: 0.5714286em;
-        padding-bottom: 0.5714286em;
-        padding-left: 0.5714286em;
-      }
-      article tbody tr {
-        border-bottom-width: 1px;
-        border-bottom-color: #e5e7eb;
-      }
-      article tbody tr:last-child {
-        border-bottom-width: 0;
-      }
-      article tbody td {
-        vertical-align: top;
-        padding-top: 0.5714286em;
-        padding-right: 0.5714286em;
-        padding-bottom: 0.5714286em;
-        padding-left: 0.5714286em;
-      }
-      article p {
-        margin-top: 1.25em;
-        margin-bottom: 1.25em;
-      }
-      article img,
-      article video,
-      article figure {
-        margin-top: 2em;
-        margin-bottom: 2em;
-        display: block;
+      img,
+      table,
+      figure {
         max-width: 100%;
-        height: auto;
       }
-      article figure > * {
-        margin-top: 0;
-        margin-bottom: 0;
+      th,
+      td,
+      pre,
+      aside {
+        padding: 0.6em;
       }
-      article h2 code {
-        font-size: 0.875em;
+      td,
+      th,
+      hr,
+      pre,
+      aside {
+        border: 1px solid #182f5c;
       }
-      article h3 code {
-        font-size: 0.9em;
-      }
-      article ol {
-        margin-top: 1.25em;
-        margin-bottom: 1.25em;
-      }
-      article ul {
-        margin-top: 1.25em;
-        margin-bottom: 1.25em;
-      }
-      article li {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-      }
-      article > ul > li p {
-        margin-top: 0.75em;
-        margin-bottom: 0.75em;
-      }
-      article > ul > li > :first-child {
-        margin-top: 1.25em;
-      }
-      article > ul > li > :last-child {
-        margin-bottom: 1.25em;
-      }
-      article > ol > li > :first-child {
-        margin-top: 1.25em;
-      }
-      article > ol > li > :last-child {
-        margin-bottom: 1.25em;
-      }
-      article ol ol,
-      article ol ul,
-      article ul ol,
-      article ul ul {
-        margin-top: 0.75em;
-        margin-bottom: 0.75em;
-      }
-      article hr + *,
-      article h2 + *,
-      article h3 + *,
-      article h4 + * {
-        margin-top: 0;
-      }
-      article thead th:first-child {
-        padding-left: 0;
-      }
-      article thead th:last-child {
-        padding-right: 0;
-      }
-      article tbody td:first-child {
-        padding-left: 0;
-      }
-      article tbody td:last-child {
-        padding-right: 0;
-      }
-      article > :first-child {
-        margin-top: 0;
-      }
-      article > :last-child {
-        margin-bottom: 0;
+      pre,
+      kbd,
+      samp,
+      code,
+      pre code {
+        overflow-x: auto;
+        background-color: black;
+        font-family: ui-monospace, monospace;
       }
       .cp,
       .cpf,
@@ -417,13 +114,6 @@
       .nf {
         color: #50fa7b;
       }
-      .c,
-      .c1,
-      .ch,
-      .cm,
-      .cs {
-        color: #6272a4;
-      }
       .gd {
         color: #8b080b;
       }
@@ -445,11 +135,35 @@
       .gl {
         text-decoration: underline;
       }
-      .gh,
-      .gi,
-      .gu {
-        font-weight: 700;
-      }
     </style>
+  </head>
+  <body>
+    <aside>
+      {{ range .Site.RegularPages.GroupBy "Section" }} {{ with $.Site.GetPage
+      "section" .Key }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ else }}
+      <a href="{{ .Permalink }}">{{ .Key | title }}</a>
+      {{ end }}
+      <ul>
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+
+      {{ end }}
+    </aside>
+    <article>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+      <p>{{ . }}</p>
+      {{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
+      <hr />
+      {{ range .Pages }}
+      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+      {{ end }} {{ end }}
+    </article>
   </body>
 </html>
