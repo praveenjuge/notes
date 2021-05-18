@@ -5,72 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
     <style>
-      body,
-      a {
+      a,
+      body {
+        max-width: 65ch;
+        margin: 1em auto;
         line-height: 1.7;
         color: rgb(221, 221, 221);
         background-color: #040811;
         font-family: ui-sans-serif, system-ui, sans-serif;
       }
-      article {
-        max-width: 65ch;
-        margin-left: auto;
-        margin-right: auto;
+      hr,
+      th,
+      td,
+      pre,
+      kbd,
+      img,
+      samp,
+      code,
+      figure {
+        max-width: 100%;
+        overflow-x: auto;
+        background-color: black;
+        border: 1px solid #182f5c;
+        font-family: ui-monospace, monospace;
       }
-      @media (min-width: 768px) {
-        body {
-          margin-left: 15rem;
-        }
-        aside {
-          top: 10px;
-          left: 10px;
-          bottom: 10px;
-          width: 15rem;
-          position: fixed;
-          overflow-y: auto;
-        }
+      th,
+      td,
+      pre {
+        padding: 0.5em;
       }
+      pre code {
+        border: 0;
+      }
+      p,
+      li,
+      td,
       .c,
       .c1,
       .ch,
       .cm,
-      .cs,
-      p,
-      li,
-      td {
+      .cs {
         color: #8899cc;
-      }
-      .gh,
-      .gi,
-      .gu {
-        font-weight: 600;
-      }
-      img,
-      table,
-      figure {
-        max-width: 100%;
-      }
-      th,
-      td,
-      pre,
-      aside {
-        padding: 0.6em;
-      }
-      td,
-      th,
-      hr,
-      pre,
-      aside {
-        border: 1px solid #182f5c;
-      }
-      pre,
-      kbd,
-      samp,
-      code,
-      pre code {
-        overflow-x: auto;
-        background-color: black;
-        font-family: ui-monospace, monospace;
       }
       .cp,
       .cpf,
@@ -134,6 +109,11 @@
       .ge,
       .gl {
         text-decoration: underline;
+      }
+      .gh,
+      .gi,
+      .gu {
+        font-weight: 600;
       }
     </style>
   </head>
