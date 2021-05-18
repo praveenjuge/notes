@@ -6,12 +6,20 @@
     <title>{{ .Title }}</title>
     <style>
       a,
-      body {
+      th,
+      td,
+      pre,
+      img,
+      body,
+      figure,
+      pre code {
+        border: 0;
+        color: #ddd;
         max-width: 65ch;
-        margin: 1em auto;
+        overflow-x: auto;
         line-height: 1.7;
-        color: rgb(221, 221, 221);
-        background-color: #040811;
+        margin: 16px auto;
+        background-color: #061229;
         font-family: ui-sans-serif, system-ui, sans-serif;
       }
       hr,
@@ -19,23 +27,14 @@
       td,
       pre,
       kbd,
-      img,
-      samp,
-      code,
-      figure {
-        max-width: 100%;
-        overflow-x: auto;
-        background-color: black;
-        border: 1px solid #182f5c;
-        font-family: ui-monospace, monospace;
+      code {
+        border: 1px solid #223f79;
+        font-family: ui-monospace, monospace !important;
       }
       th,
       td,
       pre {
-        padding: 0.5em;
-      }
-      pre code {
-        border: 0;
+        padding: 7px;
       }
       p,
       li,
@@ -45,7 +44,7 @@
       .ch,
       .cm,
       .cs {
-        color: #8899cc;
+        color: #89c;
       }
       .cp,
       .cpf,
