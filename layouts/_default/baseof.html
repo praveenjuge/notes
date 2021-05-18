@@ -5,32 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
     <style>
-      th,
-      td,
       pre,
       body {
-        padding: 8px;
+        padding: 9px;
         margin: 0 auto;
         color: #dae4ff;
         max-width: 800px;
-        overflow-x: auto;
         line-height: 1.7;
+        font-family: sans-serif;
         background-color: #061229;
-        font-family: system-ui, sans-serif;
       }
       hr,
-      th,
-      td,
       pre,
-      kbd,
       img,
       code {
         max-width: 100%;
-        border: 1px solid #222f79;
+        overflow-x: auto;
+        border-color: #1e4c9b;
+        background-color: #020b1b;
         font-family: ui-monospace, monospace;
-      }
-      pre code {
-        border: 0;
       }
       a,
       p,
@@ -114,20 +107,21 @@
   </head>
   <body>
     <aside>
-      {{ range .Site.RegularPages.GroupBy "Section" }} {{ with $.Site.GetPage
-      "section" .Key }}
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ else }}
-      <a href="{{ .Permalink }}">{{ .Key | title }}</a>
-      {{ end }}
-      <ul>
-        {{ range .Pages }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-      </ul>
-
+      <a href="/">Praveen Juge's Notes</a>
+      {{ range .Site.RegularPages.GroupBy "Section" }}
+      <details>
+        <summary style="cursor: pointer">
+          {{ with $.Site.GetPage "section" .Key }} {{ .Title }} {{ else }} {{
+          .Key | title }} {{ end }}
+        </summary>
+        <ul>
+          {{ range .Pages }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </details>
       {{ end }}
     </aside>
     <article>
