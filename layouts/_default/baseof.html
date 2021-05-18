@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
     <style>
-      a,
+      th,
+      td,
       pre,
-      img,
       body,
-      figure,
       pre code {
         border: 0;
+        padding: 8px;
         color: #ccc;
-        max-width: 80ch;
+        max-width: 800px;
         overflow-x: auto;
         line-height: 1.7;
         margin: 16px auto;
@@ -25,15 +25,13 @@
       td,
       pre,
       kbd,
+      img,
       code {
+        max-width: 100%;
         border: 1px solid #222f79;
         font-family: ui-monospace, monospace !important;
       }
-      th,
-      td,
-      pre {
-        padding: 7px;
-      }
+      a,
       p,
       li,
       td,
