@@ -1,9 +1,12 @@
 ---
 title: "Markdown Syntax Guide"
-description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 ---
 
+Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+
+Бзиа збаша (Bzia zbaşa), Фэсапщы, Ç'kemi, ሰላም, السلام عليكم, தமிழ்நாடு
 
 ## Headings
 

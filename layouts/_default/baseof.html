@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en-us" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="data:image/png;base64," />
-<title>{{ .Title }}</title>
+<title>{{.Title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   img,
   pre,
   body {
     margin: auto;
     padding: 1em;
+    color: #def;
     max-width: 50em;
-    color: #dae4ff;
     overflow-x: auto;
     line-height: 1.7;
     font-family: sans-serif;
@@ -23,27 +19,19 @@
     color: #89c;
   }
 </style>
-<a href="/">Praveen Juge's Notes</a>
-{{ range .Site.RegularPages.GroupBy "Section" }}
+<a href="/">Praveen Juge's Notes</a>{{ range .Site.RegularPages.GroupBy
+"Section" }}
 <details>
   <summary style="cursor: pointer">
-    {{ with $.Site.GetPage "section" .Key }} {{ .Title }} {{ else }} {{ .Key |
-    title }} {{ end }}
+    {{ with $.Site.GetPage "section" .Key }}{{ .Title }}{{ else }}{{ .Key |
+    title }}{{ end }}
   </summary>
-  <ul>
-    {{ range .Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }}
-  </ul>
+  {{ range .Pages }}
+  <a href="{{ .Permalink }}" style="display: block">{{ .Title }}</a>
+  {{ end }}
 </details>
 {{ end }}
 <h1>{{ .Title }}</h1>
-{{ with .Description }}
-<p>{{ . }}</p>
-{{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
-<hr />
-{{ range .Pages }}
-<p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-{{ end }} {{ end }}
+{{ .Content }}{{ range .RegularPages.GroupBy "Section" }}{{ range .Pages }}
+<a href="{{ .Permalink }}" style="display: block">{{ .Title }}</a>
+{{ end }}{{ end }}
