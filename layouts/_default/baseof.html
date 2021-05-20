@@ -1,138 +1,130 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }}</title>
-    <style>
-      pre,
-      body {
-        padding: 9px;
-        margin: 0 auto;
-        color: #dae4ff;
-        max-width: 800px;
-        line-height: 1.7;
-        font-family: sans-serif;
-        background-color: #061229;
-      }
-      hr,
-      pre,
-      img,
-      code {
-        max-width: 100%;
-        overflow-x: auto;
-        border-color: #1e4c9b;
-        background-color: #020b1b;
-        font-family: ui-monospace, monospace;
-      }
-      a,
-      p,
-      li,
-      .c,
-      .c1,
-      .ch,
-      .cm,
-      .cs {
-        color: #89c;
-      }
-      .cp,
-      .cpf,
-      .k,
-      .kc,
-      .kn,
-      .kp,
-      .kr,
-      .nt,
-      .o,
-      .ow {
-        color: #ff79c6;
-      }
-      .dl,
-      .s,
-      .s1,
-      .s2,
-      .sa,
-      .sb,
-      .sc,
-      .sd,
-      .se,
-      .sh,
-      .si,
-      .sr,
-      .ss,
-      .sx {
-        color: #f1fa8c;
-      }
-      .il,
-      .m,
-      .mb,
-      .mf,
-      .mh,
-      .mi,
-      .mo {
-        color: #bd93f9;
-      }
-      .na,
-      .nc,
-      .nf {
-        color: #50fa7b;
-      }
-      .gd {
-        color: #8b080b;
-      }
-      .go {
-        color: #44475a;
-      }
-      .kd,
-      .kt,
-      .nb,
-      .nl,
-      .nv,
-      .vc,
-      .vg,
-      .vi {
-        color: #8be9fd;
-        font-style: italic;
-      }
-      .ge,
-      .gl {
-        text-decoration: underline;
-      }
-      .gh,
-      .gi,
-      .gu {
-        font-weight: 600;
-      }
-    </style>
-  </head>
-  <body>
-    <aside>
-      <a href="/">Praveen Juge's Notes</a>
-      {{ range .Site.RegularPages.GroupBy "Section" }}
-      <details>
-        <summary style="cursor: pointer">
-          {{ with $.Site.GetPage "section" .Key }} {{ .Title }} {{ else }} {{
-          .Key | title }} {{ end }}
-        </summary>
-        <ul>
-          {{ range .Pages }}
-          <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </details>
-      {{ end }}
-    </aside>
-    <article>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}
-      <p>{{ . }}</p>
-      {{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
-      <hr />
-      {{ range .Pages }}
-      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-      {{ end }} {{ end }}
-    </article>
-  </body>
-</html>
+<html lang="en-us" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="data:image/png;base64," />
+<title>{{ .Title }}</title>
+<style>
+  pre,
+  body {
+    padding: 9px;
+    margin: 0 auto;
+    color: #dae4ff;
+    max-width: 800px;
+    line-height: 1.7;
+    font-family: sans-serif;
+    background-color: #061229;
+  }
+  hr,
+  pre,
+  img,
+  code {
+    max-width: 100%;
+    overflow-x: auto;
+    border-color: #1e4c9b;
+    background-color: #020b1b;
+    font-family: ui-monospace, monospace;
+  }
+  a,
+  p,
+  li,
+  .c,
+  .c1,
+  .ch,
+  .cm,
+  .cs {
+    color: #89c;
+  }
+  .cp,
+  .cpf,
+  .k,
+  .kc,
+  .kn,
+  .kp,
+  .kr,
+  .nt,
+  .o,
+  .ow {
+    color: #ff79c6;
+  }
+  .dl,
+  .s,
+  .s1,
+  .s2,
+  .sa,
+  .sb,
+  .sc,
+  .sd,
+  .se,
+  .sh,
+  .si,
+  .sr,
+  .ss,
+  .sx {
+    color: #f1fa8c;
+  }
+  .il,
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .mo {
+    color: #bd93f9;
+  }
+  .na,
+  .nc,
+  .nf {
+    color: #50fa7b;
+  }
+  .gd {
+    color: #8b080b;
+  }
+  .go {
+    color: #44475a;
+  }
+  .kd,
+  .kt,
+  .nb,
+  .nl,
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    color: #8be9fd;
+    font-style: italic;
+  }
+  .ge,
+  .gl {
+    text-decoration: underline;
+  }
+  .gh,
+  .gi,
+  .gu {
+    font-weight: 600;
+  }
+</style>
+<a href="/">Praveen Juge's Notes</a>
+{{ range .Site.RegularPages.GroupBy "Section" }}
+<details>
+  <summary style="cursor: pointer">
+    {{ with $.Site.GetPage "section" .Key }} {{ .Title }} {{ else }} {{ .Key |
+    title }} {{ end }}
+  </summary>
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</details>
+{{ end }}
+<h1>{{ .Title }}</h1>
+{{ with .Description }}
+<p>{{ . }}</p>
+{{ end }} {{ .Content }} {{ range .RegularPages.GroupBy "Section" }}
+<hr />
+{{ range .Pages }}
+<p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+{{ end }} {{ end }}
