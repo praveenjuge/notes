@@ -2,7 +2,7 @@
 title: "CSS Snippets"
 ---
 
-System Font Stack:
+## System Font Stack
 
 ```css
 html,
@@ -13,7 +13,7 @@ body {
 }
 ```
 
-Antialias:
+## Antialias
 
 ```css
 html,
@@ -23,7 +23,7 @@ body {
 }
 ```
 
-Viewport Height:
+## Viewport Height
 
 ```css
 body {

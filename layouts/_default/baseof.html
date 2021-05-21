@@ -1,25 +1,22 @@
 <title>{{.Title}}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="data:," />
 <style>
-  img,
   pre,
-  body {
+  :root {
+    padding: 8;
     margin: auto;
-    padding: 1em;
-    color: #def;
-    max-width: 50em;
-    overflow-x: auto;
-    line-height: 1.7;
-    font-family: sans-serif;
-    background-color: #061229;
+    max-width: 800;
+    overflow: auto;
+    color-scheme: dark;
+    font: 1.1em/1.6 sans-serif;
   }
   a,
   p,
   li {
-    color: #89c;
+    color: bbb;
   }
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
 <a href="/">Praveen Juge's Notes</a>{{ range .Site.RegularPages.GroupBy
 "Section" }}
 <details>
@@ -28,11 +25,11 @@
     title }}{{ end }}
   </summary>
   {{ range .Pages }}
-  <a href="{{ .Permalink }}" style="display: block">{{ .Title }}</a>
+  <a href="{{ .Permalink }}">{{ .Title }}</a><br />
   {{ end }}
 </details>
 {{ end }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}{{ range .RegularPages.GroupBy "Section" }}{{ range .Pages }}
-<a href="{{ .Permalink }}" style="display: block">{{ .Title }}</a>
+<a href="{{ .Permalink }}">{{ .Title }}</a><br />
 {{ end }}{{ end }}

@@ -1,0 +1,15 @@
+<a href="{{ .Destination }}" target="_blank" rel="noreferrer">
+  <img
+    {{
+    with
+    .Title}}
+    title="{{ . }}"
+    {{
+    end
+    }}
+    loading="lazy"
+    alt="{{ .Text }}"
+    style="max-width: 100%"
+    src="{{ .Destination | safeURL }}"
+  />
+</a>
