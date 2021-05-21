@@ -1,7 +1,8 @@
 ---
-title: "Sublime Config"
+title: "Editor Config"
 ---
 
+## Sublime Config
 
 ```json
 {
@@ -25,5 +26,23 @@ title: "Sublime Config"
   "translate_tabs_to_spaces": true,
   "word_wrap": true,
   "wrap_width": 72
+}
+```
+
+## VS Code Config
+
+```json
+{
+  "editor.fontSize": 16,
+  "window.zoomLevel": 1,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
 ```
