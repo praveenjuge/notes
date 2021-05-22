@@ -1,3 +1,1 @@
-# Notes
-
-A site to store my notes :)
+A site to store my notes and thoughts :)

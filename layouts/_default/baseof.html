@@ -1,21 +1,10 @@
-<title>{{.Title}}</title>
+<html style="margin: auto; width: 800; font: 1.1em/1.6 sans-serif" />
+<meta name="color-scheme" content="dark" />
 <style>
-  pre,
-  :root {
-    padding: 8;
-    margin: auto;
-    max-width: 800;
-    overflow: auto;
-    color-scheme: dark;
-    font: 1.1em/1.6 sans-serif;
-  }
-  a,
-  p,
-  li {
-    color: bbb;
-  }
+  pre{padding:9;overflow:auto}a,p,li{color:aaa
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{.Title}}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="data:," />
 <a href="/">Praveen Juge's Notes</a>{{ range .Site.RegularPages.GroupBy
 "Section" }}
