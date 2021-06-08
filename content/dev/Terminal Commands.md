@@ -111,3 +111,31 @@ XCode:
 ```sh
 xcode-select --install
 ```
+
+Websites to Block:
+
+```sh
+0.0.0.0 9gag.com
+0.0.0.0 www.9gag.com
+0.0.0.0 blogspot.com
+0.0.0.0 www.blogspot.com
+0.0.0.0 tumblr.com
+0.0.0.0 www.tumblr.com
+0.0.0.0 itch.io
+0.0.0.0 www.itch.io
+0.0.0.0 reddit.com
+0.0.0.0 m.reddit.com
+0.0.0.0 old.reddit.com
+0.0.0.0 www.reddit.com
+0.0.0.0 imgur.com
+0.0.0.0 m.imgur.com
+0.0.0.0 www.imgur.com
+0.0.0.0 youtube.com
+0.0.0.0 m.youtube.com
+0.0.0.0 www.youtube.com
+0.0.0.0 music.youtube.com
+0.0.0.0 twitter.com
+0.0.0.0 m.twitter.com
+0.0.0.0 www.twitter.com
+0.0.0.0 mobile.twitter.com
+```
