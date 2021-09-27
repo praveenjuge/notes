@@ -71,7 +71,11 @@ Rails:
 mysql.server start && npx kill-port 3000 && git pull upstream && yarn && bundle install && rails db:migrate && rails server
 ```
 
-Webpack: `bin/webpack-dev-server`
+Webpack:
+
+```sh
+bin/webpack-dev-server
+```
 
 GitHub Release:
 

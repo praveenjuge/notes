@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html style="margin:auto;max-width:900px;color-scheme:dark;font:130%/1.4 sans-serif">
+<html style="margin:auto;max-width:900px;font:130%/1.5 sans-serif;color-scheme:dark">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{.Title}}</title>
+<title>{{ .Title }}</title>
 <style>
   pre {
     padding: 1%;
@@ -10,11 +10,9 @@
   }
 </style>
 <a href= />Home</a>
-<h1>{{.Title}}</h1>
-{{.Content}}
-{{ if eq (relURL .URL) ("/" | safeHTML) }}
-{{range .Site.RegularPages.GroupBy "Section"}}
-<b>{{with $.Site.GetPage "section" .Key}}{{.Title}}{{else}}{{.Key | title}}{{end}}</b>
-{{range .Pages}}<p><a href={{.Permalink}}>{{.Title}}</a></p>{{end}}
-{{end}}
-{{ end }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ if eq (relURL .URL) ("/" | safeHTML) }}{{ range .Site.RegularPages.GroupBy "Section" }}
+<b>{{ with $.Site.GetPage "section" .Key }}{{ .Title }}{{ else }}{{ .Key | title }}{{ end }}</b>
+<ul>{{ range .Pages }}<li><a href={{.Permalink}}>{{ .Title }}</a></li>{{ end }}</ul>
+{{ end }}{{ end }}
