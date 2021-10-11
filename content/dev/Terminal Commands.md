@@ -89,6 +89,12 @@ Torrent Link:
 tplay 'magnet:?xt=urn:btih:'
 ```
 
+ffmpeg Live Steam Download:
+
+```sh
+ffmpeg -i https://URL.m3u8 -c copy -bsf:a aac_adtstoasc output.mp4
+```
+
 Download Website:
 
 ```sh
