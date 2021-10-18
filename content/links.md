@@ -9,6 +9,7 @@ title: "Links"
 ## Design Systems
 
 - [Hey Design Systems!](https://heydesign.systems)
+- [https://stratumkit.com/](https://stratumkit.com/)
 
 ## Marketing
 
