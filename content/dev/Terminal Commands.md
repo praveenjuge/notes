@@ -149,3 +149,11 @@ Websites to Block:
 0.0.0.0 www.twitter.com
 0.0.0.0 mobile.twitter.com
 ```
+
+Webpack Analyzer
+
+```
+rm -rf stats.json
+RAILS_ENV=production npx webpack --config ./config/webpack/production.js --json > stats.json
+npx webpack-bundle-analyzer stats.json
+```
