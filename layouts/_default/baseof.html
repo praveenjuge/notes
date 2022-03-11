@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html style="margin:auto;max-width:800px">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ .Title }}</title>
-<style>
-  pre {
-    padding: 1%;
-    overflow: auto
-  }
-</style>
-<a href= />Home</a>
+<a href=/>Home</a>
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-{{ if eq (relURL .URL) ("/" | safeHTML) }}{{ range .Site.RegularPages.GroupBy "Section" }}
+{{ if .IsHome }}{{ range .Site.RegularPages.GroupBy "Section" }}
 <b>{{ with $.Site.GetPage "section" .Key }}{{ .Title }}{{ else }}{{ .Key | title }}{{ end }}</b>
 <ul>{{ range .Pages }}<li><a href={{.Permalink}}>{{ .Title }}</a></li>{{ end }}</ul>
 {{ end }}{{ end }}
