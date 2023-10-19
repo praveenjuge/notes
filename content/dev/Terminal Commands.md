@@ -152,7 +152,7 @@ Websites to Block:
 
 Webpack Analyzer
 
-```
+```sh
 rm -rf stats.json
 RAILS_ENV=production npx webpack --config ./config/webpack/production.js --json > stats.json
 npx webpack-bundle-analyzer stats.json
