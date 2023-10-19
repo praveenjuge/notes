@@ -12,7 +12,13 @@ pip3 install spotdl
 brew install ffmpeg
 ```
 
-## Download Liked songs (This will take a while to start):
+## Download Liked songs:
+
+```sh
+python3 -m spotdl download saved --user-auth --preload --print-errors --sponsor-block --scan-for-songs --overwrite skip --thread 10
+```
+
+## Download Liked songs with sync file (This will take a while to start):
 
 ```sh
 python3 -m spotdl sync saved --user-auth --save-file liked.sync.spotdl
