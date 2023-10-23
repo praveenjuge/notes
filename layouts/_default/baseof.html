@@ -10,5 +10,5 @@
 {{ .Content }}
 {{ if .IsHome }}{{ range .Site.RegularPages.GroupBy "Section" }}
 <b>{{ with $.Site.GetPage "section" .Key }}{{ .Title }}{{ else }}{{ .Key | title }}{{ end }}</b>
-<ul>{{ range .Pages }}<li><a href={{.Permalink}}>{{ .Title }}</a></li>{{ end }}</ul>
+<ul>{{ range .Pages }}<li><a href={{.Permalink}}>{{ with .Title }}{{ . }}{{ else }}{{ .File.TranslationBaseName }}{{ end }}</a></li>{{ end }}</ul>
 {{ end }}{{ end }}
