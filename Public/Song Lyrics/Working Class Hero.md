@@ -1,7 +1,3 @@
----
-title: Working Class Hero
----
-
 As soon as you're born they make you feel small
 By giving you no time instead of it all
 'Til the pain is so big you feel nothing at all

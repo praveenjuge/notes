@@ -1,10 +1,6 @@
----
-title: "Links"
----
-
 ## Books
 
-- [https://hacker-recommended-books.vercel.app](https://hacker-recommended-books.vercel.app)
+- https://hacker-recommended-books.vercel.app
 - https://book.stevejobsarchive.com/
 
 ## Design News
